@@ -12,25 +12,25 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
 
         stage('Build Docker Image') {
             steps {
-                sh 'docker build -t kruthim/student-app:1.0 .'
+                bat 'docker build -t kruthim/student-app:1.0 .'
             }
         }
 
         stage('Show Docker Images') {
             steps {
-                sh 'docker images'
+                bat 'docker images'
             }
         }
     }
